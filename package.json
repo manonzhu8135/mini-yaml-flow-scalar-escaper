@@ -1,0 +1,17 @@
+{
+  "name": "mini-yaml-flow-scalar-escaper",
+  "version": "0.1.0",
+  "description": "Makes strings safe for YAML flow scalars by escaping special characters.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}

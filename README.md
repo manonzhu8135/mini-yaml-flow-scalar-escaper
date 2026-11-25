@@ -34,3 +34,10 @@ The awkward edge: `escapeFlowScalar` switches to double-quoted style when escapi
 - `escapeFlowScalar(value: string): string` — Returns a safe plain scalar, or a double-quoted scalar if the input is unsafe. Throws `TypeError` for non-strings.
 - `escapeFlowScalarDoubleQuoted(value: string): string` — Escapes for double-quoted style. Does not add surrounding quotes. Throws `TypeError` for non-strings.
 - `escapeFlowScalarSingleQuoted(value: string): string` — Escapes for single-quoted style. Does not add surrounding quotes. Throws `TypeError` for non-strings, and throws `Error` if the input contains a control character.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
